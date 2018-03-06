@@ -29,7 +29,7 @@ contract OffChainDebt {
         return true;
     }
     
-    function returnDebt(address borrower, uint amount) public onlyOwner returns(bool){
+    function returnDebt(address borrower, uint amount) public onlyOwner returns(bool) {
         debts[borrower] = _sub(debts[borrower], amount);
         ReturnDebt(borrower, amount, debts[borrower]);
         return true;
